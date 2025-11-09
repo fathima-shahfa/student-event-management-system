@@ -3,7 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Debug: Check session status
+
 echo "<!-- Debug: User ID: " . (isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 'NOT SET') . " -->";
 echo "<!-- Debug: Username: " . (isset($_SESSION['username']) ? $_SESSION['username'] : 'NOT SET') . " -->";
 echo "<!-- Debug: User Type: " . (isset($_SESSION['user_type']) ? $_SESSION['user_type'] : 'NOT SET') . " -->";
@@ -46,7 +46,7 @@ echo "<!-- Debug: User Type: " . (isset($_SESSION['user_type']) ? $_SESSION['use
                                     class="<?= ($current_page == 'about.php') ? 'active' : '' ?>">About</a></li>
                             <li>
                                 <?php if (isset($_SESSION['user_id'])): ?>
-                                    <!-- Show Dashboard only when user is logged in -->
+                                    
                                     <a href="dashboard.php"
                                         class="<?= ($current_page == 'dashboard.php') ? 'active' : '' ?>">Dashboard</a>
                                 <?php endif; ?>
@@ -54,11 +54,11 @@ echo "<!-- Debug: User Type: " . (isset($_SESSION['user_type']) ? $_SESSION['use
                             
                             <li>
                                 <?php if (isset($_SESSION['user_id'])): ?>
-                                    <!-- Show Logout only when user is logged in -->
+                                    
                                     <a href="logout.php" class="logout-btn"
                                         onclick="return confirm('Are you sure you want to logout?')">Logout</a>
                                 <?php else: ?>
-                                    <!-- Show Login only when user is NOT logged in -->
+                                    
                                     <a href="login.php"
                                         class="<?= ($current_page == 'login.php') ? 'active' : '' ?>">Login</a>
                                 <?php endif; ?>
